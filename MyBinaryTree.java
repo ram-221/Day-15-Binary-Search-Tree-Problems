@@ -1,4 +1,4 @@
-package com.bridgelabzbstuc1;
+package com.bridgelabzbstuc2;
 
 public class MyBinaryTree<K extends Comparable<K>> {
 	private MyBinaryNode<K> root;
@@ -19,7 +19,6 @@ public class MyBinaryTree<K extends Comparable<K>> {
 			current.right = addRecursively(current.right, key);
 		}
 		return current;
-		
 	}
 
 	public int getSize() {
@@ -27,7 +26,8 @@ public class MyBinaryTree<K extends Comparable<K>> {
 	}
 
 	private int getSizeRecursive(MyBinaryNode<K> current) {
-		return current == null ? 0 : 1 + this.getSizeRecursive(current.left) + this.getSizeRecursive(current.left);
+		return current == null ? 0 : 1 + this.getSizeRecursive(current.left) + this.getSizeRecursive(current.right);
 	}
+	
 
 }
